@@ -9,9 +9,22 @@ function App() {
     { id: 4, title: "todo4", description: "todo4 description" },
     { id: 5, title: "todo5", description: "todo5 description" },
   ]);
+
+  const addTodo = () => {
+    setTodos([
+      ...todos,
+      {
+        id: 4,
+        title: Math.random(),
+        description: Math.random(),
+      },
+    ]);
+  };
+
   return (
     <>
       <div>
+        <button onClick={addTodo}>Add Todo</button>
         {todos.map((todo) => (
           <Card
             key={todo.id}
